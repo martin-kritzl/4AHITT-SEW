@@ -173,7 +173,7 @@
         </git>
         <git command="tag">
             <args>
-                <arg line="deploy-${ant.project.name}-${version}"/>
+                <arg value="deploy-${ant.project.name}-${version}"/>
             </args>
         </git>
         <git command="push">
