@@ -178,7 +178,7 @@
         </git>
         <git command="push">
             <args>
-                <arg line="-u origin master" />
+                <arg line="-u origin master --tags" />
             </args>
         </git>
     </target>
