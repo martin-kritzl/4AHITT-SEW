@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+  <testsuite errors="0" failures="0" hostname="MK04" id="0" name="MySecondTest" package="at.mkritzl.ant.test" skipped="0" tests="2" time="0.073" timestamp="2015-01-15T19:40:08">
+      <properties>
+          <property name="java.vendor" value="Oracle Corporation" />
+
+          <property name="lib.dir" value="./lib/" />
+
+          <property name="sun.java.launcher" value="SUN_STANDARD" />
+
+          <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+
+          <property name="ressources.dir" value="./ressources" />
+
+          <property name="os.name" value="Windows 8.1" />
+
+          <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_20\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_20\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_20\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_20\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_20\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_20\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_20\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_20\jre\classes" />
+
+          <property name="sun.desktop" value="windows" />
+
+          <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+
+          <property name="ant.home" value="C:\Program Files\BuildTools\apache-ant-1.9.4\bin\.." />
+
+          <property name="jar.dir" value="./build/" />
+
+          <property name="java.runtime.version" value="1.8.0_20-b26" />
+
+          <property name="user.name" value="Martin Kritzl" />
+
+          <property name="build.dir" value="./build" />
+
+          <property name="user.language" value="de" />
+
+          <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_20\jre\bin" />
+
+          <property name="reports.dir" value="./build/testreports/" />
+
+          <property name="ant.project.default-target" value="main" />
+
+          <property name="doc.dir" value="./build/javadoc/" />
+
+          <property name="ant.project.name" value="Hello" />
+
+          <property name="scp.dir" value="/var/www/" />
+
+          <property name="java.version" value="1.8.0_20" />
+
+          <property name="user.timezone" value="Europe/Berlin" />
+
+          <property name="mail.user" value="mkritzl" />
+
+          <property name="sun.arch.data.model" value="64" />
+
+          <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_20\jre\lib\endorsed" />
+
+          <property name="sun.cpu.isalist" value="amd64" />
+
+          <property name="sun.jnu.encoding" value="Cp1252" />
+
+          <property name="file.encoding.pkg" value="sun.io" />
+
+          <property name="file.separator" value="\" />
+
+          <property name="java.specification.name" value="Java Platform API Specification" />
+
+          <property name="classes.dir" value="./build" />
+
+          <property name="java.class.version" value="52.0" />
+
+          <property name="user.country" value="AT" />
+
+          <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_20\jre" />
+
+          <property name="java.vm.info" value="mixed mode" />
+
+          <property name="scp.username" value="mkritzl" />
+
+          <property name="ant.file" value="C:\Users\Martin Kritzl\Schule\4AHITT\SEW\Programme\SEW-Build_Automation2\build.xml" />
+
+          <property name="os.version" value="6.3" />
+
+          <property name="git.remote" value="origin" />
+
+          <property name="path.separator" value=";" />
+
+          <property name="java.vm.version" value="25.20-b23" />
+
+          <property name="user.variant" value="" />
+
+          <property name="ant.library.dir" value="C:\Program Files\BuildTools\apache-ant-1.9.4\lib" />
+
+          <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob" />
+
+          <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+
+          <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
+
+          <property name="sun.stdout.encoding" value="cp850" />
+
+          <property name="user.script" value="" />
+
+          <property name="ant.file.type.Hello" value="file" />
+
+          <property name="main.class" value="at.mkritzl.ant.data.Hello" />
+
+          <property name="user.home" value="C:\Users\Martin Kritzl" />
+
+          <property name="java.specification.vendor" value="Oracle Corporation" />
+
+          <property name="ant.file.Hello" value="C:\Users\Martin Kritzl\Schule\4AHITT\SEW\Programme\SEW-Build_Automation2\build.xml" />
+
+          <property name="jar.file" value="Hello.jar" />
+
+          <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_20\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\PC Connectivity Solution\;C:\Program Files (x86)\PHP\;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\OpenCL SDK\3.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\3.0\bin\x64;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\ProgramData\Lenovo\ReadyApps;C:\Program Files (x86)\Java\jdk1.8.0_20\jre\bin\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\MinGW\bin;C:\MinGW\msys\1.0\bin;C:\Program Files\BuildTools\apache-ant-1.9.4\bin;C:\Program Files\BuildTools\gradle-2.2.1\bin;C:\Program Files\Git\bin;;." />
+
+          <property name="java.vendor.url" value="http://java.oracle.com/" />
+
+          <property name="java.vm.vendor" value="Oracle Corporation" />
+
+          <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+
+          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner at.mkritzl.ant.test.MySecondTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=false outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\Martin Kritzl\Schule\4AHITT\SEW\Programme\SEW-Build_Automation2\build\testreports\TEST-at.mkritzl.ant.test.MySecondTest.xml crashfile=C:\Users\Martin Kritzl\Schule\4AHITT\SEW\Programme\SEW-Build_Automation2\junitvmwatcher5246064901084885159.properties propsfile=C:\Users\Martin Kritzl\Schule\4AHITT\SEW\Programme\SEW-Build_Automation2\junit8706441753967621889.properties" />
+
+          <property name="java.class.path" value="C:\Users\Martin Kritzl\Schule\4AHITT\SEW\Programme\SEW-Build_Automation2\build;C:\Users\Martin Kritzl\Schule\4AHITT\SEW\Programme\SEW-Build_Automation2\lib\junit-4.11.jar;C:\Users\Martin Kritzl\Schule\4AHITT\SEW\Programme\SEW-Build_Automation2\lib\hamcrest-core-1.3.jar;C:\Program Files\BuildTools\apache-ant-1.9.4\lib\ant-launcher.jar;C:\Program Files\BuildTools\apache-ant-1.9.4\lib\ant.jar;C:\Program Files\BuildTools\apache-ant-1.9.4\lib\ant-junit.jar;C:\Program Files\BuildTools\apache-ant-1.9.4\lib\ant-junit4.jar" />
+
+          <property name="ant.version" value="Apache Ant(TM) version 1.9.4 compiled on April 29 2014" />
+
+          <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+
+          <property name="ant.file.type" value="file" />
+
+          <property name="java.vm.specification.version" value="1.8" />
+
+          <property name="sun.cpu.endian" value="little" />
+
+          <property name="sun.os.patch.level" value="" />
+
+          <property name="java.io.tmpdir" value="C:\Users\MARTIN~1\AppData\Local\Temp\" />
+
+          <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/" />
+
+          <property name="os.arch" value="amd64" />
+
+          <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment" />
+
+          <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_20\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext" />
+
+          <property name="tests.dir" value="./build/test" />
+
+          <property name="user.dir" value="C:\Users\Martin Kritzl\Schule\4AHITT\SEW\Programme\SEW-Build_Automation2" />
+
+          <property name="line.separator" value="&#xd;&#xa;" />
+
+          <property name="scp.hostname" value="10.0.0.25" />
+
+          <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
+
+          <property name="basedir" value="C:\Users\Martin Kritzl\Schule\4AHITT\SEW\Programme\SEW-Build_Automation2" />
+
+          <property name="ant.java.version" value="1.8" />
+
+          <property name="ant.core.lib" value="C:\Program Files\BuildTools\apache-ant-1.9.4\lib\ant.jar" />
+
+          <property name="genLanguage.dir" value="./language" />
+
+          <property name="git.branch" value="master" />
+
+          <property name="file.encoding" value="Cp1252" />
+
+          <property name="sun.stderr.encoding" value="cp850" />
+
+          <property name="source.dir" value="./src" />
+
+          <property name="java.specification.version" value="1.8" />
+
+          <property name="ant.project.invoked-targets" value="lang-de,main" />
+
+      </properties>
+
+      <testcase classname="at.mkritzl.ant.test.MySecondTest" name="testBool" time="0.001" />
+
+      <testcase classname="at.mkritzl.ant.test.MySecondTest" name="testName" time="0.003" />
+
+      <system-out><![CDATA[]]></system-out>
+
+      <system-err><![CDATA[]]></system-err>
+
+  </testsuite>
+  <testsuite errors="0" failures="0" hostname="MK04" id="1" name="MyTest" package="at.mkritzl.ant.test" skipped="0" tests="2" time="0.071" timestamp="2015-01-15T19:40:09">
+      <properties>
+          <property name="java.vendor" value="Oracle Corporation" />
+
+          <property name="lib.dir" value="./lib/" />
+
+          <property name="sun.java.launcher" value="SUN_STANDARD" />
+
+          <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+
+          <property name="ressources.dir" value="./ressources" />
+
+          <property name="os.name" value="Windows 8.1" />
+
+          <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_20\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_20\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_20\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_20\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_20\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_20\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_20\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_20\jre\classes" />
+
+          <property name="sun.desktop" value="windows" />
+
+          <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+
+          <property name="ant.home" value="C:\Program Files\BuildTools\apache-ant-1.9.4\bin\.." />
+
+          <property name="jar.dir" value="./build/" />
+
+          <property name="java.runtime.version" value="1.8.0_20-b26" />
+
+          <property name="user.name" value="Martin Kritzl" />
+
+          <property name="build.dir" value="./build" />
+
+          <property name="user.language" value="de" />
+
+          <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_20\jre\bin" />
+
+          <property name="reports.dir" value="./build/testreports/" />
+
+          <property name="ant.project.default-target" value="main" />
+
+          <property name="doc.dir" value="./build/javadoc/" />
+
+          <property name="ant.project.name" value="Hello" />
+
+          <property name="scp.dir" value="/var/www/" />
+
+          <property name="java.version" value="1.8.0_20" />
+
+          <property name="user.timezone" value="Europe/Berlin" />
+
+          <property name="mail.user" value="mkritzl" />
+
+          <property name="sun.arch.data.model" value="64" />
+
+          <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_20\jre\lib\endorsed" />
+
+          <property name="sun.cpu.isalist" value="amd64" />
+
+          <property name="sun.jnu.encoding" value="Cp1252" />
+
+          <property name="file.encoding.pkg" value="sun.io" />
+
+          <property name="file.separator" value="\" />
+
+          <property name="java.specification.name" value="Java Platform API Specification" />
+
+          <property name="classes.dir" value="./build" />
+
+          <property name="java.class.version" value="52.0" />
+
+          <property name="user.country" value="AT" />
+
+          <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_20\jre" />
+
+          <property name="java.vm.info" value="mixed mode" />
+
+          <property name="scp.username" value="mkritzl" />
+
+          <property name="ant.file" value="C:\Users\Martin Kritzl\Schule\4AHITT\SEW\Programme\SEW-Build_Automation2\build.xml" />
+
+          <property name="os.version" value="6.3" />
+
+          <property name="git.remote" value="origin" />
+
+          <property name="path.separator" value=";" />
+
+          <property name="java.vm.version" value="25.20-b23" />
+
+          <property name="user.variant" value="" />
+
+          <property name="ant.library.dir" value="C:\Program Files\BuildTools\apache-ant-1.9.4\lib" />
+
+          <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob" />
+
+          <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+
+          <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
+
+          <property name="sun.stdout.encoding" value="cp850" />
+
+          <property name="user.script" value="" />
+
+          <property name="ant.file.type.Hello" value="file" />
+
+          <property name="main.class" value="at.mkritzl.ant.data.Hello" />
+
+          <property name="user.home" value="C:\Users\Martin Kritzl" />
+
+          <property name="java.specification.vendor" value="Oracle Corporation" />
+
+          <property name="ant.file.Hello" value="C:\Users\Martin Kritzl\Schule\4AHITT\SEW\Programme\SEW-Build_Automation2\build.xml" />
+
+          <property name="jar.file" value="Hello.jar" />
+
+          <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_20\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\PC Connectivity Solution\;C:\Program Files (x86)\PHP\;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\OpenCL SDK\3.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\3.0\bin\x64;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\ProgramData\Lenovo\ReadyApps;C:\Program Files (x86)\Java\jdk1.8.0_20\jre\bin\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\MinGW\bin;C:\MinGW\msys\1.0\bin;C:\Program Files\BuildTools\apache-ant-1.9.4\bin;C:\Program Files\BuildTools\gradle-2.2.1\bin;C:\Program Files\Git\bin;;." />
+
+          <property name="java.vendor.url" value="http://java.oracle.com/" />
+
+          <property name="java.vm.vendor" value="Oracle Corporation" />
+
+          <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+
+          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner at.mkritzl.ant.test.MyTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=false outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\Martin Kritzl\Schule\4AHITT\SEW\Programme\SEW-Build_Automation2\build\testreports\TEST-at.mkritzl.ant.test.MyTest.xml crashfile=C:\Users\Martin Kritzl\Schule\4AHITT\SEW\Programme\SEW-Build_Automation2\junitvmwatcher3162920146594002028.properties propsfile=C:\Users\Martin Kritzl\Schule\4AHITT\SEW\Programme\SEW-Build_Automation2\junit7104216289499666692.properties" />
+
+          <property name="java.class.path" value="C:\Users\Martin Kritzl\Schule\4AHITT\SEW\Programme\SEW-Build_Automation2\build;C:\Users\Martin Kritzl\Schule\4AHITT\SEW\Programme\SEW-Build_Automation2\lib\junit-4.11.jar;C:\Users\Martin Kritzl\Schule\4AHITT\SEW\Programme\SEW-Build_Automation2\lib\hamcrest-core-1.3.jar;C:\Program Files\BuildTools\apache-ant-1.9.4\lib\ant-launcher.jar;C:\Program Files\BuildTools\apache-ant-1.9.4\lib\ant.jar;C:\Program Files\BuildTools\apache-ant-1.9.4\lib\ant-junit.jar;C:\Program Files\BuildTools\apache-ant-1.9.4\lib\ant-junit4.jar" />
+
+          <property name="ant.version" value="Apache Ant(TM) version 1.9.4 compiled on April 29 2014" />
+
+          <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+
+          <property name="ant.file.type" value="file" />
+
+          <property name="java.vm.specification.version" value="1.8" />
+
+          <property name="sun.cpu.endian" value="little" />
+
+          <property name="sun.os.patch.level" value="" />
+
+          <property name="java.io.tmpdir" value="C:\Users\MARTIN~1\AppData\Local\Temp\" />
+
+          <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/" />
+
+          <property name="os.arch" value="amd64" />
+
+          <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment" />
+
+          <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_20\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext" />
+
+          <property name="tests.dir" value="./build/test" />
+
+          <property name="user.dir" value="C:\Users\Martin Kritzl\Schule\4AHITT\SEW\Programme\SEW-Build_Automation2" />
+
+          <property name="line.separator" value="&#xd;&#xa;" />
+
+          <property name="scp.hostname" value="10.0.0.25" />
+
+          <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
+
+          <property name="basedir" value="C:\Users\Martin Kritzl\Schule\4AHITT\SEW\Programme\SEW-Build_Automation2" />
+
+          <property name="ant.java.version" value="1.8" />
+
+          <property name="ant.core.lib" value="C:\Program Files\BuildTools\apache-ant-1.9.4\lib\ant.jar" />
+
+          <property name="genLanguage.dir" value="./language" />
+
+          <property name="git.branch" value="master" />
+
+          <property name="file.encoding" value="Cp1252" />
+
+          <property name="sun.stderr.encoding" value="cp850" />
+
+          <property name="source.dir" value="./src" />
+
+          <property name="java.specification.version" value="1.8" />
+
+          <property name="ant.project.invoked-targets" value="lang-de,main" />
+
+      </properties>
+
+      <testcase classname="at.mkritzl.ant.test.MyTest" name="testBool" time="0.003" />
+
+      <testcase classname="at.mkritzl.ant.test.MyTest" name="testName" time="0.0" />
+
+      <system-out><![CDATA[]]></system-out>
+
+      <system-err><![CDATA[]]></system-err>
+
+  </testsuite>
+</testsuites>

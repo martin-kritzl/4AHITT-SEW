@@ -3,13 +3,16 @@
 <project name="Hello" default="main" basedir=".">
 
     <!--Definition der Variablen zur erleichterten Aenderung-->
-    <property name="version" value="1.0"/>
 
     <!--Bitte nach Anforderungen anpassen-->
     <property name="scp.username" value="mkritzl"/>
     <property name="scp.dir" value="/var/www/"/>
     <property name="scp.hostname" value="10.0.0.25"/>
 
+    <property name="git.remote" value="origin"/>
+    <property name="git.branch" value="master"/>
+
+    <property name="mail.user" value="mkritzl"/>
 
     <property name="build.dir" value="./build" />
     <!--${propertyname} ist zur Verwendung der Variablen-->
@@ -23,6 +26,7 @@
     <property name="main.class" value="at.mkritzl.ant.data.Hello"/>
     <property name="source.dir" value="./src"/>
     <property name="ressources.dir" value="./ressources"/>
+    <property name="genLanguage.dir" value="./language"/>
 
     <!--Includieren der notwendigen Libraries fuer scp-->
     <path id="scp.class.path">
@@ -51,17 +55,18 @@
         </classpath>
     </taskdef>
 
-    <!--Ueber den Classloader wird das jsch-0.1.51.jar integriert-->
+    <!--Ueber den Classloader wirden die Libraries eingebunden-->
     <classloader loader="system">
         <classpath>
             <fileset dir="${lib.dir}" includes="jsch*.jar"/>
+            <fileset dir="${lib.dir}" includes="mail.jar"/>
         </classpath>
     </classloader>
 
     <!--Startpunkt der Datei-->
     <!--Depends sind die targets die zuvor ausgefuehrt werden muessen-->
     <!--<target name="main" depends="clean,run,doc,junitreport,mail"/>-->
-    <target name="main" depends="lang-en,run,scm"/>
+    <target name="main" depends="run,mail,junitreport,doc,scm"/>
 
     <!--Loescht alle erstellten Files-->
     <target name="clean" depends="">
@@ -69,9 +74,9 @@
     </target>
 
     <!--Compiliert alle Klassen und fuegt junit hinzu-->
-    <target name="compile" depends="clean,lang-de">
+    <target name="compile" depends="clean">
         <mkdir dir="${classes.dir}"/>
-        <javac srcdir="${build.dir}${source.dir}" destdir="${classes.dir}">
+        <javac srcdir="${genLanguage.dir}" destdir="${classes.dir}">
             <classpath refid="test.class.path"/>
         </javac>
     </target>
@@ -133,24 +138,38 @@
     <!--Dabei wird das Password abgefragt-->
     <target name="copy" depends= "jar">
         <local name="scp.password"/>
-        <input message="secure-input:" addproperty="scp.password"/>
+        <input message="Remote-Password:" addproperty="scp.password">
+            <handler type="secure"/>
+        </input>
         <scp file="${jar.dir}${jar.file}" todir="${scp.username}:${scp.password}@${scp.hostname}:${scp.dir}" trust="true"/>
     </target>
 
-    <target name="mail" depends="scm">
-        <mail mailhost="mail.tgm.ac.at" mailport="995" subject="Test build">
-            <from address="me"/>
-            <to address="mkritzl@tgm.ac.at"/>
-            <message>The nightly build has completed</message>
+    <!--Schreibt eine Nachricht an die TGM-Mail mit dem eingestellten Namen-->
+    <target name="mail" depends="compile">
+        <local name="mail.password"/>
+        <!--Sichere Abfrage des Passworts des Smtp-Servers-->
+        <input message="Mail-Password:" addproperty="mail.password">
+            <handler type="secure"/>
+        </input>
+        <!--Verschicken der Mail-->
+        <mail mailhost="sophos.tgm.ac.at" ssl="true" mailport="465" subject="Build finished" user="${mail.user}" password="${mail.password}">
+            <from address="${mail.user}@student.tgm.ac.at"/>
+            <to address="${mail.user}@student.tgm.ac.at"/>
+            <message>The build has finished</message>
         </mail>
     </target>
 
+    <!--Definiert die Verwendung des Befehls git-->
     <macrodef name="git">
+        <!--Hier wird der Befehl von git eingetragen z.B. pull-->
         <attribute name="command" />
+        <!--Directory fuer add-->
         <attribute name="dir" default="" />
+        <!--Argumente wie z.B. origin master-->
         <element name="args" optional="true" />
         <sequential>
             <echo message="git @{command}" />
+            <!--Ausfuehren von Git-->
             <exec executable="git" dir="@{dir}">
                 <arg value="@{command}" />
                 <args/>
@@ -158,80 +177,75 @@
         </sequential>
     </macrodef>
 
+    <!--Pushen der geaenderten Daten auf git-->
     <target name="scm" description="Commits all changes to version git">
-        <input message="Commit message" addproperty="commit-message" />
-        <echo message="Commiting all changes with message ${commit-message}" />
+        <!--Erstellen eines Zeitstempels-->
+        <tstamp>
+            <format property="version" pattern="yyyyMMddHHmm" />
+        </tstamp>
+        <!--Eintragen des Commit-Textes-->
+        <input message="Commit message" addproperty="commit-message"/>
+        <echo message="All changes will be committed with message: ${commit-message}" />
         <git command="add">
             <args>
                 <arg value="." />
             </args>
         </git>
+        <!--Committen mit der eingegebenen Message-->
         <git command="commit">
             <args>
                 <arg value="-am ${commit-message}" />
             </args>
         </git>
+        <!--Taggen mit dem Namen des Projekts und der Version-->
         <git command="tag">
             <args>
                 <arg value="deploy-${ant.project.name}-${version}"/>
             </args>
         </git>
+        <!--Pushen mit Tags-->
         <git command="push">
             <args>
-                <arg line="-u origin master --tags" />
+                <arg line="-u ${git.remote} ${git.branch} --tags" />
             </args>
         </git>
     </target>
 
+    <!--Sprache Deutsch-->
+    <!--Veraendern von Strings im Quellcode um die Sprache zu aendern-->
     <target name="lang-de" depends="">
-        <translate toDir="${build.dir}${source.dir}"
+        <translate toDir="${genLanguage.dir}"
                    starttoken="%"
                    endtoken="%"
-                   bundle="${ressources.dir}"
+                   bundle="${ressources.dir}${ressources.dir}"
                    bundlecountry="DE"
                    bundlelanguage="ger"
                    forceoverwrite="yes"
-                   srcencoding="ISO8859_1"
-                   destencoding="ISO8859_1"
-                   bundleencoding="Cp1252">
+                   srcencoding="utf-8"
+                   destencoding="utf-8"
+                   bundleencoding="utf-8">
             <fileset dir="${source.dir}">
                 <include name="**/*.java"/>
             </fileset>
         </translate>
     </target>
 
+    <!--Sprache Englisch-->
+    <!--Veraendern von Strings im Quellcode um die Sprache zu aendern-->
     <target name="lang-en" depends="">
-        <translate toDir="${build.dir}${source.dir}"
+        <translate toDir="${genLanguage.dir}"
                    starttoken="%"
                    endtoken="%"
-                   bundle="${ressources.dir}"
+                   bundle="${ressources.dir}${ressources.dir}"
                    bundlecountry="EN"
                    bundlelanguage="en"
                    forceoverwrite="yes"
-                   srcencoding="ISO8859_1"
-                   destencoding="ISO8859_1"
-                   bundleencoding="Cp1252">
+                   srcencoding="utf-8"
+                   destencoding="utf-8"
+                   bundleencoding="utf-8">
             <fileset dir="${source.dir}">
                 <include name="**/*.java"/>
             </fileset>
         </translate>
     </target>
-
-    <!--<path id="mail.path">-->
-        <!--<pathelement location="${lib.dir}/*.jar" />-->
-        <!--&lt;!&ndash; not needed:-->
-        <!--<fileset dir="${javamail.dir}/lib"><include name="**/*.jar"/></fileset>-->
-        <!--<pathelement location="${jlb.dir}/activation.jar" />-->
-        <!--&ndash;&gt;-->
-    <!--</path>-->
-
-
-
-
-    <!--<mail from="${address}"-->
-          <!--mailhost="mail.gmx.de" ssl="yes" mailport="465"-->
-          <!--user="${address}" password="${password}"-->
-          <!--subject="Ant Mail Test">-->
-        <!--<to address="test@yahoo.de"/>-->
-    <!--</mail>-->
 </project>
